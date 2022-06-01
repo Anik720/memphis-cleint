@@ -37,8 +37,10 @@ const Banner = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log('Success:', data);
-        if (data.status === 'success') {
+        console.log('Success:', data.messagee);
+        if (data.messagee === 'failed') {
+          toast('Can not be Posted!');
+        } else {
           toast('Posted!');
         }
       })
